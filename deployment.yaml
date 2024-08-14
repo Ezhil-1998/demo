@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sixatomic
+  labels:
+    app: sixatomic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sixatomic
+  template:
+    metadata:
+      labels:
+        app: sixatomic
+    spec:
+      containers:
+      - name: sixatomic
+        image: ezhil1998/sixatomic_jenkins:v1.0
+        ports:
+        - containerPort: 8080
